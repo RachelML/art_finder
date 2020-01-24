@@ -1,5 +1,5 @@
 # Project Overview
-<iframe src="https://giphy.com/embed/3ohzdUi5U8LBb4GD4s" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/prepareforwinter-game-of-thrones-snow-3ohzdUi5U8LBb4GD4s">via GIPHY</a></p>
+https://media.giphy.com/media/3ohzdUi5U8LBb4GD4s/giphy-downsized.gif
 
 ## My art finder 
 
