@@ -91,7 +91,7 @@ https://res.cloudinary.com/rachelml/image/upload/v1579879976/Screen_Shot_2020-01
 
 ## React Component Hierarchy
 
-
+https://res.cloudinary.com/rachelml/image/upload/v1579887335/Screen_Shot_2020-01-24_at_12.33.44_PM_it0eru.png
 
 ## Components
 
