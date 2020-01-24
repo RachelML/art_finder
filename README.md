@@ -1,12 +1,11 @@
-# Project Overview
+# My art finder
 ![](https://media.giphy.com/media/3ohzdUi5U8LBb4GD4s/giphy-downsized.gif)
 
-
-## My art finder 
-
-**Project decription:** An app that will render data about a piece of art based on the users search. Using the Metropolitan museums API, user will be able to search artist or topic to display images on site. User will then be able to click on the image to get Artist and painting information. 
+An app that will render data about a piece of art based on the users search. Using the Metropolitan museums API, user will be able to search artist or topic to display images on site. User will then be able to click on the image to get Artist and painting information. 
 
 ## API Snippet
+
+https://metmuseum.github.io/
 
 ```
 {
@@ -75,11 +74,8 @@
 https://res.cloudinary.com/rachelml/image/upload/v1579879972/Screen_Shot_2020-01-24_at_10.23.33_AM_kdkdfy.png
 https://res.cloudinary.com/rachelml/image/upload/v1579879976/Screen_Shot_2020-01-24_at_10.27.49_AM_mxf3zk.png
 
-### MVP
 
-Carefully decided what is placed into your MVP as the client will expect this functionality to be implemented upon project completion.  
-
-#### MVP EXAMPLE:
+#### MVP :
 - Have a search bar on page
 - Render images of art based on users search
 - provide a clickable art image to route to a different page with more data about art.
@@ -87,26 +83,27 @@ Carefully decided what is placed into your MVP as the client will expect this fu
 
 ### Post-MVP
 
--Allow user to select favorite pieces
--Create more complex seraches or filter options
--Create local storage
+- Allow user to select favorite pieces
+- Create more complex seraches or filter options
+- Create local storage
+- Allow user to test their art knowlege by selecting art by certain artist etc..
 
 
 ## React Component Hierarchy
 
-https://res.cloudinary.com/rachelml/image/upload/v1579880793/Screen_Shot_2020-01-24_at_10.46.19_AM_ijjvv0.png
+
 
 ## Components
 
 | Component | Description |Type |
 | --- | --- | --- |
-| App | The Header receives props that render multiple nav titles and links | Functional |
-| Header | The Header receives props that render multiple nav titles and links | Functional |
-| Main | This component houses multiple rendered views through React Router and controls data received from the initial API call in state | Functional Hooks |
-| Footer | The Header receives props that render multiple nav titles and links | Functional |
-| Search/input/button | The Header receives props that render multiple nav titles and links | Functional hooks |
-| Art data | The Header receives props that render multiple nav titles and links | Functional |
-| search results  | The Header receives props that render multiple nav titles and links | Functional |
+| App | handles API calls and passes API data down through props. | Functional |
+| Header | Fixed with name of app and navigation home link  | Functional |
+| Nav link | nav link that routes to home  | Functional |
+| Main | takes search input and passes input into api to retrive artist data. Passes data through props to Art data page. Routes to slug (art data) page  | Functional Hooks |
+| Footer | my name / MET muesum reference  | Functional |
+| Search/input/button | Input and Button components that will raise state with input value to Main component. Handle onClick and OnChange in form components| Functional hooks |
+| Art data/search results  | takes props from input api call in main and passes through route as props to render Image and data on page  | Functional |
 
 
 ## Priority Matrix
@@ -115,24 +112,18 @@ https://res.cloudinary.com/rachelml/image/upload/v1579881403/Screen_Shot_2020-01
 
 ## Timeframes
 
-Timeframes are key in the development cycle. You have limited time to code and so much to accomplish!  Look at all of your planned files and components, and all of the areas of development you are planning and give an estimate of how long each one will take to complete. It's always best to pad the time to account for the unknown, so be sure to add an additional hour or two to play it safe. As you progress, you can update the "Time Invested" column to keep track of your hours, but that number should turn into "Actual Time" by the presentation day. Also, put a winter-themed gif at the top of your readme before you pitch to show you read the instructions thoroughly.
-
-
-| Component | Priority | Estimated Time | Time Invested | Actual Time |
+| Logic | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Creating components  | H | 1hrs| 0hrs | 0hrs |
+| Creating and Building components  | H | 6hrs| 0hrs | 0hrs |
 | pseudocoding| H | 3hrs| 0hrs | 0hrs |
 | pulling api data | H | 5hrs| 0hrs | 0hrs |
 | Building searchbar | H | 6hrs| 0hrs | 0hrs |
-| css/flexbox| H | 16hrs| 0hrs | 0hrs |
+| css/flexbox| H | 12hrs| 0hrs | 0hrs |
 | Routing to art detail page | H | 8hrs| 0hrs | 0hrs |
-| Total | H | 39hrs| 0hrs | 0hrs |
+| Total | H | 40hrs| 0hrs | 0hrs |
 
 ## Project Schedule
 
-This schedule will be used to keep track of your progress throughout the week and align with our expectations.  
-
-You are **responsible** for scheduling time with your squad to seek approval for each deliverable by the end of the corresponding day, excluding `Saturday` and `Sunday`.
 
 |  Day | Deliverable | Status
 |---|---| ---|
@@ -147,13 +138,13 @@ You are **responsible** for scheduling time with your squad to seek approval for
 
 ## Additional Libraries
 
-axios
-React-router-dom
+- axios
+- React-router-dom
 
 ## Issues and Resolutions
 
-Using api with search and pulling appropriate data. 
-Routing to a different page for artists click 
+- Using api with search and pulling appropriate data. 
+- Routing to a different page for artists click 
 
 ## Code Snippet
 
