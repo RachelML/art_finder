@@ -1,5 +1,5 @@
 # Project Overview
-
+<iframe src="https://giphy.com/embed/3ohzdUi5U8LBb4GD4s" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/prepareforwinter-game-of-thrones-snow-3ohzdUi5U8LBb4GD4s">via GIPHY</a></p>
 
 ## My art finder 
 
@@ -70,8 +70,11 @@
 
 ## Wireframes
 
-Display all wireframes here with any neccessary descriptions.
+```
+https://res.cloudinary.com/rachelml/image/upload/v1579879972/Screen_Shot_2020-01-24_at_10.23.33_AM_kdkdfy.png
+https://res.cloudinary.com/rachelml/image/upload/v1579879976/Screen_Shot_2020-01-24_at_10.27.49_AM_mxf3zk.png
 
+```
 ### MVP
 
 Carefully decided what is placed into your MVP as the client will expect this functionality to be implemented upon project completion.  
@@ -91,7 +94,7 @@ Carefully decided what is placed into your MVP as the client will expect this fu
 
 ## React Component Hierarchy
 
-Include an image of your component hierarchy that shows the data flow and architectural design of your app.
+https://res.cloudinary.com/rachelml/image/upload/v1579880793/Screen_Shot_2020-01-24_at_10.46.19_AM_ijjvv0.png
 
 ## Components
 
@@ -108,7 +111,7 @@ Include an image of your component hierarchy that shows the data flow and archit
 
 ## Priority Matrix
 
-Include an image of your Priority Matrix (X is time and Y is priority)
+https://res.cloudinary.com/rachelml/image/upload/v1579881403/Screen_Shot_2020-01-24_at_10.56.21_AM_z1q43y.png
 
 ## Timeframes
 
@@ -117,9 +120,13 @@ Timeframes are key in the development cycle. You have limited time to code and s
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Adding Form | H | 3hrs| 3.5hrs | 3.5hrs |
-| Working with API | H | 3hrs| 2.5hrs | 2.5hrs |
-| Total | H | 6hrs| 5hrs | 5hrs |
+| Creating components  | H | 1hrs| 0hrs | 0hrs |
+| pseudocoding| H | 3hrs| 0hrs | 0hrs |
+| pulling api data | H | 5hrs| 0hrs | 0hrs |
+| Building searchbar | H | 6hrs| 0hrs | 0hrs |
+| css/flexbox| H | 16hrs| 0hrs | 0hrs |
+| Routing to art detail page | H | 8hrs| 0hrs | 0hrs |
+| Total | H | 39hrs| 0hrs | 0hrs |
 
 ## Project Schedule
 
