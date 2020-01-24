@@ -71,11 +71,10 @@
 
 ## Wireframes
 
-```
+
 https://res.cloudinary.com/rachelml/image/upload/v1579879972/Screen_Shot_2020-01-24_at_10.23.33_AM_kdkdfy.png
 https://res.cloudinary.com/rachelml/image/upload/v1579879976/Screen_Shot_2020-01-24_at_10.27.49_AM_mxf3zk.png
 
-```
 ### MVP
 
 Carefully decided what is placed into your MVP as the client will expect this functionality to be implemented upon project completion.  
