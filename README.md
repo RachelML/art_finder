@@ -1,5 +1,6 @@
 # Project Overview
-https://media.giphy.com/media/3ohzdUi5U8LBb4GD4s/giphy-downsized.gif
+![](https://media.giphy.com/media/3ohzdUi5U8LBb4GD4s/giphy-downsized.gif)
+
 
 ## My art finder 
 
