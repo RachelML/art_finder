@@ -103,9 +103,9 @@ https://res.cloudinary.com/rachelml/image/upload/v1579880793/Screen_Shot_2020-01
 | --- | --- | --- |
 | App | The Header receives props that render multiple nav titles and links | Functional |
 | Header | The Header receives props that render multiple nav titles and links | Functional |
-| Main | This component houses multiple rendered views through React Router and controls data received from the initial API call in state | Class |
+| Main | This component houses multiple rendered views through React Router and controls data received from the initial API call in state | Functional Hooks |
 | Footer | The Header receives props that render multiple nav titles and links | Functional |
-| Search/input/button | The Header receives props that render multiple nav titles and links | Functional |
+| Search/input/button | The Header receives props that render multiple nav titles and links | Functional hooks |
 | Art data | The Header receives props that render multiple nav titles and links | Functional |
 | search results  | The Header receives props that render multiple nav titles and links | Functional |
 
