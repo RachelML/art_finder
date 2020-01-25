@@ -11,35 +11,49 @@ class App extends React.Component {
     super(props)
     this.state = {
       art: [],
-      inputSearch: []
+      inputSearch: [],
+      searchInput: '',
+      searchArtist: null
 
     }
   }
 
- 
 
-
-  userInput = async () => {
-    const res = await axios.get(`https://collectionapi.metmuseum.org/public/collection/v1/search?hasImages=true&q=Auguste Renoir`)
-    return res
+  handleChange = (e) => {
+    let value = e.target.value;
+    this.setState({
+      searchInput: value
+    })
+    console.log(value)
   }
 
-  returnSearch = async () => {
-    const res = await axios.get(`https://collectionapi.metmuseum.org/public/collection/v1/objects/${this.state.inputSearch[0]}`)
-    return res
-  }
-
-  async componentDidMount() {
-    let searchResponse = await this.userInput()
+  handleClick = async (e) => {
+    e.preventDefault();
+    let searchResponse = await this.userInput(this.state.searchInput);
     this.setState({
       inputSearch: searchResponse.data.objectIDs
     })
-    let response = await this.returnSearch()
+    this.secondApiCall()
+  }
+ 
+  userInput = async (name) => {
+    const inputRes = await axios.get(`https://collectionapi.metmuseum.org/public/collection/v1/search?hasImages=true&q=${name}`)
+    return inputRes
+  }
+
+  returnSearch = async (object) => {
+    const res = await axios.get(`https://collectionapi.metmuseum.org/public/collection/v1/objects/${object}`)
+    return res
+  }
+
+  async secondApiCall() {
+    let response = await this.returnSearch(this.state.inputSearch[0])
     this.setState({
       art: response.data
     })
-  
   }
+
+ 
 
   render(){
   return (
@@ -47,7 +61,7 @@ class App extends React.Component {
 
       
       <Header />
-      <Main artDetail={this.state.art}/>
+      <Main artDetail={this.state.art} searchInput={this.state.searchInput} handleClick={this.handleClick} handleChange={this.handleChange}/>
       <Footer />
    
     </div>
