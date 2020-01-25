@@ -5,6 +5,7 @@ import axios from 'axios'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Main from './components/Main'
+import SelectedImage from './components/SelectedImage'
 
 class App extends React.Component {
   constructor(props) {
@@ -37,7 +38,7 @@ class App extends React.Component {
   }
  
   userInput = async (name) => {
-    const inputRes = await axios.get(`https://collectionapi.metmuseum.org/public/collection/v1/search?hasImages=true&q=${name}`)
+    const inputRes = await axios.get(`https://collectionapi.metmuseum.org/public/collection/v1/search?Begin=1800&dateEnd=2000&medium=Paintings&hasImages=true&q=${name}`)
     return inputRes
   }
 
@@ -62,6 +63,8 @@ class App extends React.Component {
       
       <Header />
       <Main artDetail={this.state.art} searchInput={this.state.searchInput} handleClick={this.handleClick} handleChange={this.handleChange}/>
+      <Route exact path="/posts/:id" component={(match) =><SelectedImage match={match}/>}/>
+
       <Footer />
    
     </div>
