@@ -11,6 +11,7 @@ function Main(props) {
       <div className="App">
         <Search searchInput={props.searchInput} handleClick={props.handleClick} handleChange={props.handleChange}/>
         <Detail artDetail={props.artDetail} />
+        {/* <SelectedImage artDetail={props.artDetail} /> */}
       </div>
     );
   }
