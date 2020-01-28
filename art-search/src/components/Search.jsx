@@ -4,11 +4,11 @@ import { Route, Link } from 'react-router-dom'
 
 function Search(props) {
     return (
-      <div className="App">
-          <p>Search artist or topic</p>
+      <div className="search">
+          {/* <p>Search artist or topic</p> */}
             <form>
-              <input type="text" placeholder='Search...' onChange={props.handleChange} value={props.searchInput}/>
-              <button onClick={props.handleClick}>search</button>  
+              <input className="search-bar" type="text" placeholder='Search by artist, style or theme' onChange={props.handleChange} value={props.searchInput}/>
+              <button onClick={props.handleClick}><i class="fa fa-search"></i></button>  
             </form>
 
           {/* <Link exact activeClassName="active" to="/art/">Link to Detail component</Link> */}

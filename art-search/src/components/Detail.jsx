@@ -9,7 +9,7 @@ function Detail(props) {
             {props.artDetail.map(detail =>
              (
             <Link to={`/art/${detail.objectID}`} >
-                <img src={detail.primaryImage} />
+                <img className="img" src={detail.primaryImage} />
             </Link>
            
             ))}

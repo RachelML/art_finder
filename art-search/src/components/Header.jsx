@@ -4,10 +4,13 @@ import { NavLink } from 'react-router-dom';
 
 function Header() {
     return (
-      <div>
+      <div className="nav-container">
         <nav>
-            <NavLink exact activeClassName="active" to="/">Art Search header</NavLink>
+            <div>
+            <NavLink exact className="header" activeClassName="active" to="/">Art Search header</NavLink>
+            <NavLink exact className="favorites" activeClassName="active" to="/">Favorites</NavLink>
 
+            </div>
         </nav>
 
       </div>

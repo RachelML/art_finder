@@ -17,7 +17,6 @@ class App extends React.Component {
       inputSearch: [],
       searchInput: '',
       searchArtist: null,
-      click: false
 
     }
   }
@@ -38,18 +37,11 @@ class App extends React.Component {
       inputSearch: searchResponse.data.objectIDs,
       click: true 
     })
-    this.searchCall()
-    this.openDetail()
+    this.searchCall();
   }
+ 
 
-  openDetail(){
-    if(this.state.click === true)
-    return(
-      <div>
-        <Detail />
-      </div>
-    )
-  }
+
 
   userInput = async (name) => {
     const inputRes = await axios.get(`https://collectionapi.metmuseum.org/public/collection/v1/search?Begin=1800&dateEnd=2000&medium=Paintings&hasImages=true&q=${name}`)
@@ -71,6 +63,7 @@ class App extends React.Component {
     })
   }
 
+
   render() {
     return (
       
@@ -87,7 +80,7 @@ class App extends React.Component {
         />
 
 
-        <Route exact path="/art/" component={Navigationprops => <Detail
+        <Route exact path="/" component={Navigationprops => <Detail
          {...Navigationprops}
          artDetail={this.state.art} 
        />} /> 

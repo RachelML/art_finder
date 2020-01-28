@@ -24,23 +24,25 @@ import axios from 'axios'
 
       render() {
           return(
-              <div>
-                 <h2>Detail</h2> 
-                 <p>image</p>
-                  <img src={this.state.detail.primaryImage} />   
-                  <p>{this.state.detail.title}</p>
-                  <p></p>
-                  <p>artist</p>
-                  <p>{this.state.detail.artistDisplayName}</p>
+              <div className="container">
+                  <div>
+                    <img className ="detail-image" src={this.state.detail.primaryImage} /> 
+                  </div> 
+                  <div className="detail">
+                    <p>{this.state.detail.title}</p>
+                     <p></p>
+                    <p>artist</p>
+                    <p>{this.state.detail.artistDisplayName}</p>
 
-                 <p>date</p>
-                 <p>{this.state.detail.objectDate}</p>
+                    <p>date</p>
+                    <p>{this.state.detail.objectDate}</p>
 
-                 <p>category</p>
-                 <p>{this.state.detail.department}</p>
+                     <p>category</p>
+                     <p>{this.state.detail.department}</p>
 
                 
-                <Link exact activeClassName="active" to="/art/">Back</Link>
+                  <Link exact activeClassName="active" to="/">Back</Link>
+                </div> 
 
               </div>
           )
