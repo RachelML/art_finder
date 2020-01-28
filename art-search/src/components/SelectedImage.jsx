@@ -24,7 +24,7 @@ import axios from 'axios'
 
       render() {
           return(
-              <div className="container">
+              <div className="selected-container">
                   <div>
                     <img className ="detail-image" src={this.state.detail.primaryImage} /> 
                   </div> 

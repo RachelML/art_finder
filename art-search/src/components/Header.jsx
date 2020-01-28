@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import Favorite from './Favorite'
 
 
 function Header() {
@@ -8,7 +9,7 @@ function Header() {
         <nav>
             <div>
             <NavLink exact className="header" activeClassName="active" to="/">Art Search header</NavLink>
-            <NavLink exact className="favorites" activeClassName="active" to="/">Favorites</NavLink>
+            <NavLink exact className="favorites" activeClassName="active" to="/Favorite">Favorites</NavLink>
 
             </div>
         </nav>

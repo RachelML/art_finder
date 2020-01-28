@@ -3,15 +3,19 @@ import { Route, Link } from 'react-router-dom'
 
 
 function Detail(props) {
-    console.log(props)
     return (
-        <div className="App">
+        <div className="flex">
             {props.artDetail.map(detail =>
              (
-            <Link to={`/art/${detail.objectID}`} >
-                <img className="img" src={detail.primaryImage} />
-            </Link>
-           
+                 <div className="container">
+                    <Link className="image" to={`/art/${detail.objectID}`} >
+                        <img className="img" src={detail.primaryImage} />
+                 </Link>
+                     <Link detail={props.detail} exact className="overlay" activeClassName="active" to="/favorite" >
+                     <h1 className="icon"> <i class="fa fa-heart"></i>
+                        </h1>
+                     </Link>
+            </div>
             ))}
 
         </div >
