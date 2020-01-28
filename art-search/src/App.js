@@ -1,11 +1,13 @@
 import React from 'react';
 import './App.css';
-import { Route, NavLink } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
 import axios from 'axios'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Main from './components/Main'
 import SelectedImage from './components/SelectedImage'
+import Search from './components/Search'
+import Detail from './components/Detail'
 
 class App extends React.Component {
   constructor(props) {
@@ -14,7 +16,8 @@ class App extends React.Component {
       art: [],
       inputSearch: [],
       searchInput: '',
-      searchArtist: null
+      searchArtist: null,
+      click: false
 
     }
   }
@@ -32,10 +35,20 @@ class App extends React.Component {
     e.preventDefault();
     let searchResponse = await this.userInput(this.state.searchInput);
     this.setState({
-      inputSearch: searchResponse.data.objectIDs
+      inputSearch: searchResponse.data.objectIDs,
+      click: true 
     })
     this.searchCall()
+    this.openDetail()
+  }
 
+  openDetail(){
+    if(this.state.click === true)
+    return(
+      <div>
+        <Detail />
+      </div>
+    )
   }
 
   userInput = async (name) => {
@@ -49,7 +62,7 @@ class App extends React.Component {
   }
 
   async searchCall() {
-    let allResults = await Promise.all(this.state.inputSearch.slice(0, 2).map(async (element) => {
+    let allResults = await Promise.all(this.state.inputSearch.slice(0, 10).map(async (element) => {
       let response = await axios.get(`https://collectionapi.metmuseum.org/public/collection/v1/objects/${element}`)
       return response.data
     }))
@@ -66,12 +79,18 @@ class App extends React.Component {
         
 
         <Header />
-        
-        <Main artDetail={this.state.art} 
-        searchInput={this.state.searchInput} 
-        handleClick={this.handleClick} 
-        handleChange={this.handleChange} 
+
+         <Search 
+           searchInput={this.state.searchInput} 
+           handleClick={this.handleClick} 
+           handleChange={this.handleChange} 
         />
+
+
+        <Route exact path="/art/" component={Navigationprops => <Detail
+         {...Navigationprops}
+         artDetail={this.state.art} 
+       />} /> 
 
         <Route exact path="/art/:id" component={SelectedImage} />
 

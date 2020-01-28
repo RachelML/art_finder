@@ -1,31 +1,9 @@
 import React from 'react';
-import { Route, NavLink } from 'react-router-dom'
+import { Route, Link } from 'react-router-dom'
 import axios from 'axios'
 
 
-// function SelectedImage (props) {
-//     console.log(props)
-   
-//     return (
-//       <div className="App">
-          
-//             <h2>Detail</h2>  
-//              <p>name</p>
-//             <p>{props.detail.title}</p>
-//              <p>artist</p>
-//             <p>{props.detail.artistDisplayName}</p>
-//            <p>date</p>
-//            <p>{props.detail.objectDate}</p>
-//              <p>category</p>
-//           <p>{props.detail.department}</p>
-//            <p>image</p>
-//         <img src={props.detail.primaryImage} />
-     
-//       </div>
-//     );
-//   }
-  
-//   export default SelectedImage;
+
 
   class SelectedImage extends React.Component {
     constructor(props) {
@@ -43,19 +21,17 @@ import axios from 'axios'
         detail: res.data
       })
     }
-    
-  
-    
-  
 
       render() {
           return(
               <div>
-                 <h2>Detail</h2>  
+                 <h2>Detail</h2> 
+                 <p>image</p>
+                  <img src={this.state.detail.primaryImage} />   
                   <p>{this.state.detail.title}</p>
                   <p></p>
-                 <p>artist</p>
-                <p>{this.state.detail.artistDisplayName}</p>
+                  <p>artist</p>
+                  <p>{this.state.detail.artistDisplayName}</p>
 
                  <p>date</p>
                  <p>{this.state.detail.objectDate}</p>
@@ -63,9 +39,8 @@ import axios from 'axios'
                  <p>category</p>
                  <p>{this.state.detail.department}</p>
 
-                <p>image</p>
-                <img src={this.state.detail.primaryImage} />
-
+                
+                <Link exact activeClassName="active" to="/art/">Back</Link>
 
               </div>
           )
