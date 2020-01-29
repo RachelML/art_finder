@@ -24,6 +24,7 @@ class Favorite extends React.Component {
           return(
               <div className="container">
                   <div>
+                    <h1>My gallery</h1>
                     <img className ="detail-image" src={this.state.detail.primaryImage} /> 
                   </div> 
                 

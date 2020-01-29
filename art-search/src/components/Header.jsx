@@ -8,7 +8,7 @@ function Header() {
       <div className="nav-container">
         <nav>
             <div>
-            <NavLink exact className="header" activeClassName="active" to="/">Art Search header</NavLink>
+            <NavLink exact className="header" activeClassName="active" to="/">THE MET ART SEARCH</NavLink>
             <NavLink exact className="favorites" activeClassName="active" to="/Favorite">Favorites</NavLink>
 
             </div>

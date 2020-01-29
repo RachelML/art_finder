@@ -33,6 +33,7 @@ class App extends React.Component {
   }
 
   handleClick = async (e) => {
+
     e.preventDefault();
     let searchResponse = await this.userInput(this.state.searchInput);
     this.setState({
@@ -45,6 +46,7 @@ class App extends React.Component {
 
 
   userInput = async (name) => {
+    
     const inputRes = await axios.get(`https://collectionapi.metmuseum.org/public/collection/v1/search?Begin=1800&dateEnd=2000&medium=Paintings&hasImages=true&q=${name}`)
     return inputRes
   }
@@ -57,6 +59,11 @@ class App extends React.Component {
   
 
   async searchCall() {
+    if(this.state.inputSearch === null) {
+      return(
+          alert("this returns no results")
+      )
+    }
     this.setState({
       loading: true
     })
@@ -87,7 +94,7 @@ class App extends React.Component {
            handleChange={this.handleChange} 
         />
 
-        {this.state.loading ? 'loading..' : 
+        {this.state.loading ? <div class="loader"></div>: 
         <Route exact path="/" component={Navigationprops => <Detail
          {...Navigationprops}
          artDetail={this.state.art} 

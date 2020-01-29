@@ -29,10 +29,9 @@ import axios from 'axios'
                     <img className ="detail-image" src={this.state.detail.primaryImage} /> 
                   </div> 
                   <div className="detail">
-                    <p>{this.state.detail.title}</p>
-                     <p></p>
-                    <p>artist</p>
-                    <p>{this.state.detail.artistDisplayName}</p>
+                    <h1 className="name-detail">{this.state.detail.artistDisplayName}</h1>
+                    <h3>{this.state.detail.title}</h3>
+
 
                     <p>date</p>
                     <p>{this.state.detail.objectDate}</p>
