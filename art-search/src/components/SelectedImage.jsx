@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, Link } from 'react-router-dom'
 import axios from 'axios'
+import Favorite from './Favorite'
 
 
 
@@ -9,7 +10,8 @@ import axios from 'axios'
     constructor(props) {
       super(props)
       this.state = {
-          detail: []
+          detail: [],
+          id: props.match.params.id,
       }
       console.log(props.match.params.id)
     }
@@ -36,11 +38,15 @@ import axios from 'axios'
                     <p>date</p>
                     <p>{this.state.detail.objectDate}</p>
 
+
                      <p>category</p>
                      <p>{this.state.detail.department}</p>
 
                 
                   <Link exact activeClassName="active" to="/">Back</Link>
+                  <Link to={`/favorite`} className="icon"> <i class="fa fa-heart"></i>
+                        </Link>
+
                 </div> 
 
               </div>

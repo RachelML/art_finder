@@ -5,7 +5,8 @@
   text-decoration: None;
   font-size: 230%;
   font-family: 'Work Sans', sans-serif;
-  color:black
+  color:black;
+  padding-left: 50px;
 }
 .header:hover {
   color:rgb(210, 45, 51)
@@ -123,7 +124,7 @@ p {
 }
 
 .icon {
-  color: black;
+  color: rgba(255,255,255, 0.7);
   font-size: 50px;
   position: absolute;
   top: 50%; 
@@ -137,6 +138,10 @@ p {
 .fa-heart:hover {
   color: rgb(210, 45, 51);
 }
+
+/* .fa-heart:focus {
+  color: rgb(210, 45, 51);
+} */
 
 .loader {
   border: 16px solid #f3f3f3;

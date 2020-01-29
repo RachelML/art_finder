@@ -18,8 +18,7 @@ class App extends React.Component {
       inputSearch: [],
       searchInput: '',
       searchArtist: null,
-      loading: false
-
+      loading: false,
     }
   }
 
@@ -41,12 +40,16 @@ class App extends React.Component {
     })
     this.searchCall();
   }
- 
+
+  handleFaveToggle() {
+    // console.log(this.props)
+    
+  }
 
 
 
   userInput = async (name) => {
-    
+
     const inputRes = await axios.get(`https://collectionapi.metmuseum.org/public/collection/v1/search?Begin=1800&dateEnd=2000&medium=Paintings&hasImages=true&q=${name}`)
     return inputRes
   }
@@ -56,12 +59,12 @@ class App extends React.Component {
     return res
   }
 
-  
+
 
   async searchCall() {
-    if(this.state.inputSearch === null) {
-      return(
-          alert("this returns no results")
+    if (this.state.inputSearch === null) {
+      return (
+        alert("this returns no results")
       )
     }
     this.setState({
@@ -81,24 +84,25 @@ class App extends React.Component {
 
   render() {
     return (
-      
+
 
       <div className="App">
-        
+
 
         <Header />
 
-         <Search 
-           searchInput={this.state.searchInput} 
-           handleClick={this.handleClick} 
-           handleChange={this.handleChange} 
+        <Search
+          searchInput={this.state.searchInput}
+          handleClick={this.handleClick}
+          handleChange={this.handleChange}
         />
 
-        {this.state.loading ? <div class="loader"></div>: 
-        <Route exact path="/" component={Navigationprops => <Detail
-         {...Navigationprops}
-         artDetail={this.state.art} 
-        />} /> }
+        {this.state.loading ? <div class="loader"></div> :
+          <Route exact path="/" component={Navigationprops => <Detail
+            {...Navigationprops}
+            artDetail={this.state.art}
+            onFaveToggle={this.handleFaveToggle}
+          />} />}
 
         <Route exact path="/art/:id" component={SelectedImage} />
         <Route exact path="/favorite" component={Favorite} />
