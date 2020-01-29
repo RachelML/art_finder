@@ -44,8 +44,7 @@ import Favorite from './Favorite'
 
                 
                   <Link exact activeClassName="active" to="/">Back</Link>
-                  <Link to={`/favorite`} className="icon"> <i class="fa fa-heart"></i>
-                        </Link>
+                  
 
                 </div> 
 

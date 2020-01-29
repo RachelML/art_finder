@@ -43,9 +43,8 @@ class App extends React.Component {
   }
 
   handleFaveToggle = async (props)=> {
-    const res = await axios.get(`https://collectionapi.metmuseum.org/public/collection/v1/objects/${props}`)    
-    this.setState({
-      favorite: res.data
+     this.setState({
+      favorite: props
     })
   
   }

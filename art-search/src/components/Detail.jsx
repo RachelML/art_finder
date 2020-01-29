@@ -9,7 +9,7 @@ function Detail(props) {
         e.stopPropagation()
         props.onFaveToggle(id)
         console.log("adding or removing from favorites")
-        // console.log(id)
+        console.log(id)
        
 
     }
@@ -23,7 +23,7 @@ function Detail(props) {
                             <img className="img" src={detail.primaryImage} />
                         </Link>
                         <div exact className="overlay" activeClassName="active" to="/favorite" >
-                            <h1 to={`/favorite`} onClick= {(e)=>favoriteClick(detail.objectID, e)} className="icon"> <i class="fa fa-heart"></i>
+                            <h1 to={`/favorite`} onClick= {(e)=>favoriteClick(detail, e)} className="icon"> <i class="fa fa-heart"></i>
                             </h1>
                         </div>
                     </div>

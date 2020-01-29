@@ -106,6 +106,9 @@ p {
   
   height: auto; */
 }
+.favorite-image {
+  width: 50%;
+}
 
 .overlay {
   position: absolute; 

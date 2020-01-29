@@ -1,5 +1,6 @@
 import React from 'react';
-import axios from 'axios'
+import { Route, Link } from 'react-router-dom'
+
 
 class Favorite extends React.Component {
     constructor(props) {
@@ -8,28 +9,24 @@ class Favorite extends React.Component {
             detail: []
         }
         console.log(props.favoriteData)
-        // console.log(props.id)
-
-        //   console.log(props.match.params.id)
+      
     }
 
-    // async componentDidMount() {
-
-    //     const res = await axios.get(`https://collectionapi.metmuseum.org/public/collection/v1/objects/${this.props.match.params.id}`)
-    //     console.log(res)
-    //     this.setState({
-    //         detail: res.data
-    //     })
-    // }
 
     render() {
         return (
             <div className="container">
+                <h1>My gallery</h1>
+                    <img className="favorite-image" src={this.props.favoriteData.primaryImage} />
+
+                {/* {this.props.favoriteData.map( (detail) => (
                 <div>
                     <h1>My gallery</h1>
-                    <img src={this.props.favoriteData.primaryImage} />
+                    <img className="favorite-image" src={detail.primaryImage} />
                   </div>
 
+                 ) )} */}
+                 <Link exact activeClassName="active" to="/">Back</Link>
 
 
             </div>
@@ -38,3 +35,5 @@ class Favorite extends React.Component {
 }
 
 export default Favorite;
+
+
