@@ -7,25 +7,27 @@ class Favorite extends React.Component {
         this.state = {
             detail: []
         }
-        console.log(props)
+        console.log(props.favoriteData)
+        // console.log(props.id)
+
         //   console.log(props.match.params.id)
     }
 
-    async componentDidMount() {
+    // async componentDidMount() {
 
-        const res = await axios.get(`https://collectionapi.metmuseum.org/public/collection/v1/objects/${this.props.match.params.id}`)
-        console.log(res)
-        this.setState({
-            detail: res.data
-        })
-    }
+    //     const res = await axios.get(`https://collectionapi.metmuseum.org/public/collection/v1/objects/${this.props.match.params.id}`)
+    //     console.log(res)
+    //     this.setState({
+    //         detail: res.data
+    //     })
+    // }
 
     render() {
         return (
             <div className="container">
                 <div>
                     <h1>My gallery</h1>
-                    <img src={this.state.detail.primaryImage} />
+                    <img src={this.props.favoriteData.primaryImage} />
                   </div>
 
 

@@ -19,6 +19,7 @@ class App extends React.Component {
       searchInput: '',
       searchArtist: null,
       loading: false,
+      favorite: []
     }
   }
 
@@ -41,9 +42,12 @@ class App extends React.Component {
     this.searchCall();
   }
 
-  handleFaveToggle() {
-    // console.log(this.props)
-    
+  handleFaveToggle = async (props)=> {
+    const res = await axios.get(`https://collectionapi.metmuseum.org/public/collection/v1/objects/${props}`)    
+    this.setState({
+      favorite: res.data
+    })
+  
   }
 
 
@@ -58,7 +62,7 @@ class App extends React.Component {
     const res = await axios.get(`https://collectionapi.metmuseum.org/public/collection/v1/objects/${object}`)
     return res
   }
-
+ 
 
 
   async searchCall() {
@@ -101,11 +105,15 @@ class App extends React.Component {
           <Route exact path="/" component={Navigationprops => <Detail
             {...Navigationprops}
             artDetail={this.state.art}
+            // returnSearch={this.returnSearch}
             onFaveToggle={this.handleFaveToggle}
           />} />}
 
         <Route exact path="/art/:id" component={SelectedImage} />
-        <Route exact path="/favorite" component={Favorite} />
+        <Route exact path="/favorite" component={Navigationprops => <Favorite
+            {...Navigationprops}
+            favoriteData={this.state.favorite}
+          />}/>
 
         <Footer />
 

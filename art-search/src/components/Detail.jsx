@@ -7,9 +7,10 @@ function Detail(props) {
 
     let favoriteClick = (id, e) => {
         e.stopPropagation()
-        props.onFaveToggle()
+        props.onFaveToggle(id)
         console.log("adding or removing from favorites")
-        console.log(id)
+        // console.log(id)
+       
 
     }
 
