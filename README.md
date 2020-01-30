@@ -120,13 +120,13 @@ https://res.cloudinary.com/rachelml/image/upload/v1579881403/Screen_Shot_2020-01
 
 | Logic | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Creating and Building components  | H | 6hrs| 4hrs | 0hrs |
-| pseudocoding| H | 3hrs| 1hrs | 0hrs |
-| pulling api data | H | 5hrs| 6hrs | 0hrs |
-| Building searchbar | H | 6hrs| 3hrs | 0hrs |
-| css/flexbox| H | 12hrs| 5hrs | 0hrs |
-| Routing to art detail page | H | 8hrs| 5hrs | 0hrs |
-| Total | H | 40hrs| 24hrs | 0hrs |
+| Creating and Building components  | H | 6hrs| 8hrs | 8hrs |
+| pseudocoding| H | 3hrs| 1hrs | 1hrs |
+| pulling api data | H | 5hrs| 7hrs | 7hrs |
+| Building searchbar | H | 6hrs| 3hrs | 3hrs |
+| css/flexbox| H | 12hrs| 12hrs | 12hrs |
+| Routing to art detail page | H | 8hrs| 5hrs | 5hrs | (working with routing in general)
+| Total | H | 40hrs| 24hrs | 36hrs |
 
 ## Project Schedule
 
