@@ -87,6 +87,12 @@ https://res.cloudinary.com/rachelml/image/upload/v1579879976/Screen_Shot_2020-01
 - Create more complex seraches or filter options
 - Create local storage
 - Allow user to test their art knowlege by selecting art by certain artist etc..
+- add changing background image on home page 
+- hide search bar on non relevant components 
+- change class name on click
+- remove search bar when not needed 
+
+
 
 
 ## React Component Hierarchy
@@ -114,13 +120,13 @@ https://res.cloudinary.com/rachelml/image/upload/v1579881403/Screen_Shot_2020-01
 
 | Logic | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Creating and Building components  | H | 6hrs| 0hrs | 0hrs |
-| pseudocoding| H | 3hrs| 0hrs | 0hrs |
-| pulling api data | H | 5hrs| 0hrs | 0hrs |
-| Building searchbar | H | 6hrs| 0hrs | 0hrs |
-| css/flexbox| H | 12hrs| 0hrs | 0hrs |
-| Routing to art detail page | H | 8hrs| 0hrs | 0hrs |
-| Total | H | 40hrs| 0hrs | 0hrs |
+| Creating and Building components  | H | 6hrs| 4hrs | 0hrs |
+| pseudocoding| H | 3hrs| 1hrs | 0hrs |
+| pulling api data | H | 5hrs| 6hrs | 0hrs |
+| Building searchbar | H | 6hrs| 3hrs | 0hrs |
+| css/flexbox| H | 12hrs| 5hrs | 0hrs |
+| Routing to art detail page | H | 8hrs| 5hrs | 0hrs |
+| Total | H | 40hrs| 24hrs | 0hrs |
 
 ## Project Schedule
 
@@ -145,16 +151,33 @@ https://res.cloudinary.com/rachelml/image/upload/v1579881403/Screen_Shot_2020-01
 
 - Using api with search and pulling appropriate data. 
 - Routing to a different page for artists click 
+- Pulling data from api due to API search requirements. API will only pull object data of 1 piece of art. Mapping through works of art requires number of picture x api calls which causes a slow load when trying to render 10+ images  
+- appropriately routing to components and identifying what should be on page at load and how routing should occur for certain data . 
+- Passing props unnecessarily and causing component re-load when not needed. Trying to change className to change color of heart when clicked but was unable to due to a component reload. 
+- adding functions to the MOST logical component for efficient code. Later realizing I could have structured my code differently. lack of pseudocoding and planning in the begining.   
+- I ended up tackling alot of post-mvp but they werent planned in my initial component heirarchy and planning. So when adding them on I didnt have a clear picture of how to do it. 
+
+
 
 ## Code Snippet
 
-Use this section to include a brief code snippet you are proud of, along with a brief description of why.
+I was exciting to figure out and use local storage for the first time. 
 
 ```
-function reverse(string) {
-	// here is the code to reverse a string of text
-}
+    componentWillMount(){
+    localStorage.getItem('image') && this.setState({
+      favorite: JSON.parse(localStorage.getItem('image')),
+    })
+  }
+
+  componentWillUpdate(nextProps, nextState) {
+    localStorage.setItem('image', JSON.stringify(nextState.favorite))
+
+ }
 ```
 
 ## Change Log
- Use this section to document what changes were made in your overall planning and the reasoning behind those changes.  
+- Only rendering 15 image results opposed to all results due to lag time. 
+- adding a favorites component to render favorite images when a heart icon is clicked. 
+- adding one art image on home page load to make the home page more visually appealing 
+- adding a heart hover feature to all images to let user add to favorites 
