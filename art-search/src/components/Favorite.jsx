@@ -21,7 +21,7 @@ class Favorite extends React.Component {
             <div className="container">
                 {/* <h1>MY GALLERY</h1>
                     <img className="favorite-image" src={this.props.favoriteData.primaryImage} /> */}
-                    <h1>My gallery</h1>
+                    <h1 className="gallery">MY GALLERY</h1>
 
                 {this.state.detail.map( (detail) => (
                 <div>

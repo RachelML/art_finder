@@ -37,11 +37,13 @@ nav {
 .search {
   padding-top: 130px;
   padding-bottom: 50px;
+
 }
 
 .search-bar {
   min-width: 50%;
   height: 40px;
+
 }
 .search-bar:hover {
   border-color: rgb(210, 45, 51);
@@ -146,6 +148,20 @@ p {
   text-align: center;
 }
 
+.icon-click {
+  color: purple;
+  font-size: 50px;
+  position: absolute;
+  top: 50%; 
+  left: 50%;
+  right: 150px;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%); 
+  text-align: center;
+}
+
+
+
 .fa-heart:hover {
   color: rgb(210, 45, 51);
 }
@@ -181,6 +197,18 @@ p {
   width: 100%;
   padding: 30px 0;
   margin-top: 20px;
+
+}
+
+.load-image {
+  opacity: 0.5;
+  height: auto;
+  max-width: 100%;
+}
+
+.div-container {
+  overflow: hidden;
+
 
 }
 
@@ -239,5 +267,6 @@ p {
     padding-top: 150px;
     padding-bottom: 50px;
   }
-  
+
+ 
 }

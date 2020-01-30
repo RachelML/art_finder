@@ -20,6 +20,8 @@ class App extends React.Component {
       searchArtist: null,
       loading: false,
       favorite: [],
+      change: false,
+      newLoad: true,
     }
   }
  
@@ -28,7 +30,6 @@ class App extends React.Component {
     this.setState({
       searchInput: value
     })
-    console.log(value)
   }
 
   handleClick = async (e) => {
@@ -41,30 +42,49 @@ class App extends React.Component {
     this.searchCall();
   }
 
-  handleFaveToggle = async (props)=> {
-    console.log(props)
-    console.log(this.state.favorite)
-    let tempArray= this.state.favorite
-    tempArray.push(props)
-     this.setState( {
-      favorite: tempArray
+
+  handleFaveToggle = (detail) => {
+
+     this.setState(prevState => ({
+      favorite: [...prevState.favorite, detail],
+      change: !prevState.change
+    }))
+    if (this.state.change === false ) {
+      this.removeFavorite()
+        }
+  }
+/////////////////////////not removing object from array
+  removeFavorite = (e)=> {
+  let array = [...this.state.favorite]; 
+  let index = array.indexOf(this.state.favorite)
+  // console.log(index)
+  if (index !== -1) {
+    array.splice(index, 1);
+    this.setState({favorite: array});
+  }
+  console.log(this.state.favorite)
+}
+
+    componentWillMount(){
+    localStorage.getItem('image') && this.setState({
+      favorite: JSON.parse(localStorage.getItem('image')),
     })
-  
   }
 
-//     componentWillMount(){
-//     localStorage.getItem('image') && this.setState({
-//       favorite: JSON.parse(localStorage.getItem('image')),
-//       isLoading: false
-//     })
-//   }
+  componentWillUpdate(nextProps, nextState) {
+    localStorage.setItem('image', JSON.stringify(nextState.favorite))
 
-//   componentWillUpdate(nextProps, nextState) {
-//     // this.state.favorite.push(nextProps.favorite)
-//     localStorage.setItem('image', JSON.stringify(nextState.favorite))
+ }
 
-//  }
+componentDidMount = async () => {
+  
+    let response = await axios.get(`https://collectionapi.metmuseum.org/public/collection/v1/objects/436528`)
+  this.setState({
+    loading: false,
+    art: response.data
+  })
 
+}
 
   userInput = async (name) => {
 
@@ -95,7 +115,8 @@ class App extends React.Component {
     }))
     this.setState({
       loading: false,
-      art: allResults
+      art: allResults,
+      newLoad: false
     })
   }
 
@@ -116,8 +137,9 @@ class App extends React.Component {
           searchInput={this.state.searchInput}
           handleClick={this.handleClick}
           handleChange={this.handleChange}
-        /> 
+        />  
 
+        {/* <img src={this.state.imageOnLoad.primaryImage} /> */}
 
         {this.state.loading ? <div class="loader"></div> :
           <Route exact path="/" component={Navigationprops => <Detail
@@ -125,6 +147,7 @@ class App extends React.Component {
             artDetail={this.state.art}
             // returnSearch={this.returnSearch}
             onFaveToggle={this.handleFaveToggle}
+            newLoad = {this.state.newLoad}
           />} />} 
 
         <Route exact path="/art/:id" component={SelectedImage} />
