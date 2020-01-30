@@ -3,9 +3,13 @@ import React from 'react';
 
 function Footer() {
     return (
-      <div className="App">
-        <p></p>
+      <div className="footer-container">
+      <div className="footer">
+        <span>created with The Met Api</span>
+        {/* <span>by Rachel</span> */}
+
      
+      </div>
       </div>
     );
   }

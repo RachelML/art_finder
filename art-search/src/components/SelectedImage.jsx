@@ -38,7 +38,10 @@ import Favorite from './Favorite'
                     <p>date</p>
                     <p>{this.state.detail.objectDate}</p>
 
-
+                    <p>culture</p>
+                    <p>{this.state.detail.culture}</p>
+                    <p>medium</p>
+                    <p>{this.state.detail.medium}</p>
                      <p>category</p>
                      <p>{this.state.detail.department}</p>
 

@@ -4,11 +4,11 @@ import { Route, Link } from 'react-router-dom';
 import axios from 'axios'
 import Header from './components/Header'
 import Footer from './components/Footer'
-import Main from './components/Main'
 import SelectedImage from './components/SelectedImage'
 import Search from './components/Search'
 import Detail from './components/Detail'
 import Favorite from './components/Favorite'
+
 
 class App extends React.Component {
   constructor(props) {
@@ -19,11 +19,10 @@ class App extends React.Component {
       searchInput: '',
       searchArtist: null,
       loading: false,
-      favorite: []
+      favorite: [],
     }
   }
-
-
+ 
   handleChange = (e) => {
     let value = e.target.value;
     this.setState({
@@ -43,12 +42,28 @@ class App extends React.Component {
   }
 
   handleFaveToggle = async (props)=> {
-     this.setState({
-      favorite: props
+    console.log(props)
+    console.log(this.state.favorite)
+    let tempArray= this.state.favorite
+    tempArray.push(props)
+     this.setState( {
+      favorite: tempArray
     })
   
   }
 
+//     componentWillMount(){
+//     localStorage.getItem('image') && this.setState({
+//       favorite: JSON.parse(localStorage.getItem('image')),
+//       isLoading: false
+//     })
+//   }
+
+//   componentWillUpdate(nextProps, nextState) {
+//     // this.state.favorite.push(nextProps.favorite)
+//     localStorage.setItem('image', JSON.stringify(nextState.favorite))
+
+//  }
 
 
   userInput = async (name) => {
@@ -84,6 +99,8 @@ class App extends React.Component {
     })
   }
 
+ 
+
 
   render() {
     return (
@@ -92,13 +109,15 @@ class App extends React.Component {
       <div className="App">
 
 
+
         <Header />
 
         <Search
           searchInput={this.state.searchInput}
           handleClick={this.handleClick}
           handleChange={this.handleChange}
-        />
+        /> 
+
 
         {this.state.loading ? <div class="loader"></div> :
           <Route exact path="/" component={Navigationprops => <Detail
@@ -106,7 +125,7 @@ class App extends React.Component {
             artDetail={this.state.art}
             // returnSearch={this.returnSearch}
             onFaveToggle={this.handleFaveToggle}
-          />} />}
+          />} />} 
 
         <Route exact path="/art/:id" component={SelectedImage} />
         <Route exact path="/favorite" component={Navigationprops => <Favorite
