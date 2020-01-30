@@ -1,20 +1,20 @@
 import React from 'react';
-import { Route, Link } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 
 
 function Search(props) {
+
+  if (props.match.isExact === false) {
+    return null
+  }
     return (
       <div className="search">
-          {/* <p>Search artist or topic</p> */}
             <form>
               <input className="search-bar" type="text" placeholder='       Search by artist, style or theme' onChange={props.handleChange} value={props.searchInput}/>
               <button onClick={props.handleClick}><i class="fa fa-search"></i></button>  
-            </form>
-
-          {/* <Link exact activeClassName="active" to="/art/">Link to Detail component</Link> */}
-   
+            </form>   
       </div>
     );
   }
   
-  export default Search;
+  export default withRouter(Search);

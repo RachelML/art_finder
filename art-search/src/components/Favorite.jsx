@@ -8,32 +8,21 @@ class Favorite extends React.Component {
         this.state = {
             detail: props.favoriteData
         }
-        // console.log(props.favoriteData)
-    //   this.setState ({
-    //       detail: props.favoriteData
-    //   })
-      console.log(this.state.detail)
-
     }
 
     render() {
         return (
-            <div className="container">
-                {/* <h1>MY GALLERY</h1>
-                    <img className="favorite-image" src={this.props.favoriteData.primaryImage} /> */}
+            <div className="containers">
                     <h1 className="gallery">MY GALLERY</h1>
 
                 {this.state.detail.map( (detail) => (
-                <div>
+                 <div>
                     <img className="favorite-image" src={detail.primaryImage} />
                   </div>
-
-                 ) )}
+                 ))}
                  <div>
                  <Link exact activeClassName="active" to="/">Back</Link>
                  </div>
-
-
             </div>
         )
     }

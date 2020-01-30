@@ -13,6 +13,10 @@
   color:rgb(210, 45, 51)
 
 }
+
+.containers {
+  margin-top: 150px;
+}
 .favorites {
   text-decoration: None;
   float: right;
@@ -39,6 +43,18 @@ nav {
   padding-bottom: 50px;
 
 }
+.italics {
+  color: white;
+  font-style: italic;
+  padding-left: 15px;
+
+}
+
+span {
+  color: white;
+
+
+}
 
 .search-bar {
   min-width: 50%;
@@ -51,6 +67,7 @@ nav {
 .selected-container {
   display: flex;
   justify-content: center;
+  margin-top: 150px;
 }
 
 button {
@@ -72,17 +89,19 @@ button:hover {
 
 .detail-image {
   object-fit: cover;
-
   width: 500px;
   height: 500px;
   margin-right: 10px;
+}
 
+.date-detail {
+  color: white;
+  font-size: 20px;
 }
 .detail {
   width: 500px;
   height: 500px;
   background-color: rgb(210, 45, 51);
-  ;
   margin-left: 10px;
 }
 
@@ -95,7 +114,10 @@ p {
 
  .name-detail {
    color: white;
-   padding: 40px 0;
+   padding-top: 120px;
+   padding-left: 15px;
+   font-size: 25px;
+
  }
 
 
@@ -111,11 +133,7 @@ p {
 }
 
 
-.image {
-  /* width: 100%;
-  
-  height: auto; */
-}
+
 .favorite-image {
   width: 50%;
 }
@@ -166,9 +184,6 @@ p {
   color: rgb(210, 45, 51);
 }
 
-/* .fa-heart:focus {
-  color: rgb(210, 45, 51);
-} */
 
 .loader {
   border: 16px solid #f3f3f3;

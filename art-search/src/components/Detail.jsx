@@ -1,15 +1,12 @@
 import React from 'react';
 import { Route, Link } from 'react-router-dom'
-import Favorite from './Favorite'
-import { render } from '@testing-library/react';
 
-//not changing state on click 
+
 class Detail extends React.Component {
     constructor(props) {
         super(props)
         this.state = ({
             active: false
-
         })
     }
 
@@ -22,7 +19,6 @@ class Detail extends React.Component {
     favoriteClick = (detail, e) => {
         e.stopPropagation()
         this.props.onFaveToggle(detail)
-        // console.log(detail)
         this.toggleActive()
     }
 
@@ -52,7 +48,3 @@ class Detail extends React.Component {
 }
 export default Detail;
 
-
-//create onClick on h1 to pass image to favorites component
-// CSS onClick make heart stay red 
-//detail={props.detail}

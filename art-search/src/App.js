@@ -53,16 +53,14 @@ class App extends React.Component {
       this.removeFavorite()
         }
   }
-/////////////////////////not removing object from array
+// non working code. hoping to add remove from favorite functionality 
   removeFavorite = (e)=> {
   let array = [...this.state.favorite]; 
   let index = array.indexOf(this.state.favorite)
-  // console.log(index)
   if (index !== -1) {
     array.splice(index, 1);
     this.setState({favorite: array});
   }
-  console.log(this.state.favorite)
 }
 
     componentWillMount(){
@@ -120,17 +118,9 @@ componentDidMount = async () => {
     })
   }
 
- 
-
-
   render() {
     return (
-
-
       <div className="App">
-
-
-
         <Header />
 
         <Search
@@ -139,13 +129,10 @@ componentDidMount = async () => {
           handleChange={this.handleChange}
         />  
 
-        {/* <img src={this.state.imageOnLoad.primaryImage} /> */}
-
         {this.state.loading ? <div class="loader"></div> :
           <Route exact path="/" component={Navigationprops => <Detail
             {...Navigationprops}
             artDetail={this.state.art}
-            // returnSearch={this.returnSearch}
             onFaveToggle={this.handleFaveToggle}
             newLoad = {this.state.newLoad}
           />} />} 
