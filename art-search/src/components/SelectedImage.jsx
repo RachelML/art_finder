@@ -1,7 +1,6 @@
 import React from 'react';
 import { Route, Link } from 'react-router-dom'
 import axios from 'axios'
-import Favorite from './Favorite'
 
 
 
@@ -13,7 +12,6 @@ class SelectedImage extends React.Component {
       detail: [],
       id: props.match.params.id,
     }
-    console.log(props.match.params.id)
   }
 
   async componentDidMount() {
