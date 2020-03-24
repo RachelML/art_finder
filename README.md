@@ -1,4 +1,4 @@
-# art finder
+# The Met Art Search
 
 An app that will render data about a piece of art based on the users search. Using the Metropolitan museums API, user will be able to search artist or topic to display images on site. User will then be able to click on the image to get Artist and painting information. 
 
