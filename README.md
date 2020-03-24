@@ -1,5 +1,4 @@
 # art finder
-![](https://media.giphy.com/media/3ohzdUi5U8LBb4GD4s/giphy-downsized.gif)
 
 An app that will render data about a piece of art based on the users search. Using the Metropolitan museums API, user will be able to search artist or topic to display images on site. User will then be able to click on the image to get Artist and painting information. 
 
@@ -68,13 +67,6 @@ https://metmuseum.github.io/
 }
 ```
 
-## Wireframes
-
-
-https://res.cloudinary.com/rachelml/image/upload/v1579879972/Screen_Shot_2020-01-24_at_10.23.33_AM_kdkdfy.png
-https://res.cloudinary.com/rachelml/image/upload/v1579879976/Screen_Shot_2020-01-24_at_10.27.49_AM_mxf3zk.png
-
-
 #### MVP :
 - Have a search bar on page
 - Render images of art based on users search
@@ -94,11 +86,6 @@ https://res.cloudinary.com/rachelml/image/upload/v1579879976/Screen_Shot_2020-01
 
 
 
-
-## React Component Hierarchy
-
-https://res.cloudinary.com/rachelml/image/upload/v1579887335/Screen_Shot_2020-01-24_at_12.33.44_PM_it0eru.png
-
 ## Components
 
 | Component | Description |Type |
@@ -111,10 +98,6 @@ https://res.cloudinary.com/rachelml/image/upload/v1579887335/Screen_Shot_2020-01
 | Search/input/button | Input and Button components that will raise state with input value to Main component. Handle onClick and OnChange in form components| Functional hooks |
 | Art data/search results  | takes props from input api call in main and passes through route as props to render Image and data on page  | Functional |
 
-
-## Priority Matrix
-
-https://res.cloudinary.com/rachelml/image/upload/v1579881403/Screen_Shot_2020-01-24_at_10.56.21_AM_z1q43y.png
 
 ## Timeframes
 
